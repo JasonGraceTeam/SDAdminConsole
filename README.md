@@ -10,3 +10,10 @@ Run `grunt` for building and `grunt serve` for preview.
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
+
+
+Note : More Dependancies Careful. Huge size upto 200MB.
+
+run Below before grunt:
+bower install
+npm intall
