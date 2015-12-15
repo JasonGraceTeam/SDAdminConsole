@@ -17,9 +17,9 @@ angular.module('sdadminConsoleApp')
     $scope.username = 'Vishwa.vijay14@gmail.com';
     $scope.password = 'Zangetsu';
     $scope.submitLogin = function(){
-    	utilService.changePage(constants.pagelist.home.url);
+    	utilService.changePage(constants.PAGE_LIST.HOME.URL);
     };
     $scope.forgotPassword = function(){
-    	utilService.changePage(constants.pagelist.forgotPassword.url);
+    	utilService.changePage(constants.PAGE_LIST.FORGOT_PWD.URL);
     };
   });
