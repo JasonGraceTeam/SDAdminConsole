@@ -17,8 +17,28 @@ angular.module('sdadminConsoleApp')
       var parameter = {method : constants.SERVICES.PRODUCT.METHOD.GET_PROD_LST,params:{prodIds:productIds}};
       utilService.invokeService(function(response){
           if (response.length>0) {
-            defered.resolve({title:'Products',response:response});
+            defered.resolve({title:constants.TABLE_LIST.PRODUCTS,response:response});
           }
+        },function(err){
+          defered.reject(err);
+        },constants.SERVICES.PRODUCT.PATH,parameter);
+      return defered.promise;
+    },
+    updateProducts :function(product){
+      var defered = $q.defer();
+      var parameter = {method : constants.SERVICES.PRODUCT.METHOD.UPDATE_PROD,params:{product:product}};
+      utilService.invokeService(function(response){
+            defered.resolve({status:'success'});
+        },function(err){
+          defered.reject(err);
+        },constants.SERVICES.PRODUCT.PATH,parameter);
+      return defered.promise;
+    },
+    searchProducts :function(searchText){
+      var defered = $q.defer();
+      var parameter = {method : constants.SERVICES.PRODUCT.METHOD.GET_PROD_SEARCH,params:{searchText:searchText,currentIndex:1}};
+      utilService.invokeService(function(response){
+            defered.resolve({title:constants.TABLE_LIST.PRODUCTS,response:response});
         },function(err){
           defered.reject(err);
         },constants.SERVICES.PRODUCT.PATH,parameter);
@@ -29,7 +49,7 @@ angular.module('sdadminConsoleApp')
       var reviewParam = {method : constants.SERVICES.REVIEW.METHOD.GET_REVW_FR_PROD_ID,params:{prodId:productId}};
       utilService.invokeService(function(response){
           if (response.length>0) {
-              defered.resolve({title:'Reviews',response:response});
+              defered.resolve({title:constants.TABLE_LIST.REVIEWS,response:response});
           }else{
             defered.reject();
           }
@@ -38,12 +58,22 @@ angular.module('sdadminConsoleApp')
         },constants.SERVICES.REVIEW.PATH,reviewParam);
       return defered.promise;
     },
+    updateReviews :function(product){
+      var defered = $q.defer();
+      var parameter = {method : constants.SERVICES.REVIEW.METHOD.UPDATE_REVIEW,params:{review:review}};
+      utilService.invokeService(function(response){
+            defered.resolve({status:'success'});
+        },function(err){
+          defered.reject(err);
+        },constants.SERVICES.PRODUCT.PATH,parameter);
+      return defered.promise;
+    },
     getCategories :function(productId){
       var defered = $q.defer();
       var parameter = {method : constants.SERVICES.CATEGORY.METHOD.GET_CAT_LST,params:{currentIndex:1}};
       utilService.invokeService(function(response){
           if (response.length>0) {
-              defered.resolve({title:'Categories',response:response});
+              defered.resolve({title:constants.TABLE_LIST.CATEGORIES,response:response});
           }else{
             defered.reject();
           }
@@ -51,7 +81,17 @@ angular.module('sdadminConsoleApp')
           defered.reject(err);
         },constants.SERVICES.CATEGORY.PATH,parameter);
       return defered.promise;
-    }  
+    },
+    updateCategories :function(category){
+      var defered = $q.defer();
+      var parameter = {method : constants.SERVICES.CATEGORY.METHOD.UPDATE_CATEGORY,params:{category:category}};
+      utilService.invokeService(function(response){
+            defered.resolve({status:'success'});
+        },function(err){
+          defered.reject(err);
+        },constants.SERVICES.PRODUCT.PATH,parameter);
+      return defered.promise;
+    },  
   }
 });
 /*

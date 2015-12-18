@@ -14,24 +14,6 @@ angular.module('sdadminConsoleApp')
       'AngularJS',
       'Karma'
     ];
-    var data = [{
-    	orderId 	: '1',
-    	address		: 'Vishwas HK 9916859569 Nagawara A2b opposite Bangalore 560045',
-    	status 		: 'placed',
-    	last_update	: '10-12-2015 11:45:25'	
-    },
-    {
-    	orderId 	: '2',
-    	address		: 'Vishwas HK 9916859569 Nagawara A2b opposite Bangalore 560045',
-    	status 		: 'placed',
-    	last_update	: '10-12-2015 10:45:25'	
-    },
-    {
-    	orderId 	: '3',
-    	address		: 'Vishwas HK 9916859569 Nagawara A2b opposite Bangalore 560045',
-    	status 		: 'placed',
-    	last_update	: '10-12-2015 12:45:25'	
-    }];
     $scope.Products;
     $scope.Reviews;
     $scope.Category;

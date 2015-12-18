@@ -7,6 +7,12 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model='searchTxt'  placeholder="Search for...">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="searchItem()">Go!</button>
+                          </span>
+                        </div><!-- /input-group -->
                         <table class="table table-hover">
 						    <thead>
 						      <tr >
@@ -16,6 +22,7 @@
 						    <tbody>
 						      <tr ng-repeat="item in data">
 						        <td ng-repeat="header in dataheaders">{{item[header]}}</td>
+                                <td><button type="button" class="btn btn-info" ng-click="editItem(details.title,item)">Edit</button></td>
 						      </tr>				  
 						</table>
                         </div>
